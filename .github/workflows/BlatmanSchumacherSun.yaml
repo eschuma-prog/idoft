@@ -4,9 +4,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      git clone https://github.com/junit-team/junit4
-      cd junit4
-      git rev-parse HEAD
-      mvn test-compile -pl . -am
-      mvn -pl . test -Dtest=-Dtest=org.junit.internal.MethodSorterTest#testJvmMethodSorter
-      mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.junit.internal.MethodSorterTest#testJvmMethodSorter
+      - run: git clone https://github.com/junit-team/junit4
+      - run: cd junit4
+      - run: git rev-parse HEAD
+      - run: mvn test-compile -pl . -am
+      - run: mvn -pl . test -Dtest=-Dtest=org.junit.internal.MethodSorterTest#testJvmMethodSorter
+      - run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.junit.internal.MethodSorterTest#testJvmMethodSorter
