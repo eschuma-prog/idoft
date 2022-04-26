@@ -6,6 +6,6 @@ jobs:
     steps:
       - run: git clone https://github.com/junit-team/junit4
       - run: cd junit4
-      - run: mvn test-compile -pl -am
+      - run: mvn test-compile -pl . -am
       - run: mvn -pl . test -Dtest=-Dtest=org.junit.internal.MethodSorterTest#testJvmMethodSorter
       - run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.junit.internal.MethodSorterTest#testJvmMethodSorter
