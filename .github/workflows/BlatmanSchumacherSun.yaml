@@ -1,9 +1,13 @@
-name: GitHub Actions Demo
+name: GitHub Actions 
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-java@v1
+        with: 
+          java-version: 1.8
+      
       - run: git clone https://github.com/junit-team/junit4
       - run: cd junit4
       - run: mvn test-compile -pl . -am
